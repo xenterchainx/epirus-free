@@ -1,7 +1,7 @@
 version: "3.6"
 services:
   api:
-    image: web3labs/epirus-free-api:latest
+    image: ksivane/epirus-free-api:v0.1-manual-retag
     environment:
       - NODE_ENDPOINT=${NODE_ENDPOINT}
       - MONGO_CLIENT_URI=mongodb://mongodb:27017
@@ -21,7 +21,7 @@ services:
       - epirus
 
   web:
-    image: web3labs/epirus-free-web:latest
+    image: ksivane/epirus-free-web:v0.1-manual-retag
     environment:
       - API_URL=/api
     depends_on:
@@ -30,7 +30,7 @@ services:
       - epirus
   
   ingestion:
-    image: web3labs/epirus-free-ingestion:latest
+    image: ksivane/epirus-free-ingestion:v0.1-manual-retag
     environment:
       - NODE_ENDPOINT=${NODE_ENDPOINT}
       - MONGO_CLIENT_URI=mongodb://mongodb:27017
